@@ -3,6 +3,21 @@
     <title>Curso Javascript</title>
   </head>
   <body>
+
+    <div id="app">
+      <!----button onclick="mostraAlerta()">Me pressione</button>
+      <button onmouseover="mostraAlerta()">Passe o mouse sobre mim</button>
+      <input onkeypress="mostraAlerta()">Pressione uma tecla</input>
+
+      <input type="text" name="nome1" id="nome1" class="nome"/>
+      <input type="text" name="nome2" id="nome2" class="nome"/>
+
+      
+      <button class="botao">Adicionar</button-->
+
+      <div class="box"></div>
+    </div>
+
     <script>
       //Javascript
       /*console.log("Hello World!");
@@ -206,9 +221,70 @@
 
       setInterval(exibeAlgo, 1000); //Vai executar a cada 1 segundo
       setTimeout(exibeAlgo, 5000); //Executa apenas uma vez com um delay em segundos
-      */ 
       
       
+      //Trabalhando com a DOM
+
+      function mostraAlerta() {
+        alert('Botão foi clicado');
+      }
+
+      //Lidando com elementos da DOM
+
+      var inputElement1 = document.getElementById('nome1');
+      console.log(inputElement1);
+
+      var inputElement2 = document.getElementsByTagName('input');
+      console.log(inputElement2);
+
+      var inputElement3 = document.getElementsByTagName('input')[1];
+      console.log(inputElement3);
+
+      var inputElement4 = document.getElementsByClassName('nome');
+      console.log(inputElement4);
+
+      var inputElement5 = document.querySelector('body div#app input');
+      console.log(inputElement5);
+
+      var inputElement6 = document.querySelector('input[name=nome2]');
+      console.log(inputElement6);
+
+      var inputElement7 = document.querySelectorAll('input');
+      console.log(inputElement7);
+
+      var inputElement8 = document.querySelector('input[name=nome2]');
+      var btnElement = document.querySelector('button.botao');
+
+      btnElement.onclick = function() {
+        var text = inputElement8.value;
+        alert('Botão clicado! Texto digitado = ' + text);
+      }
+
+      // Lidando com elementos
+
+      var linkElement = document.createElement('a');
+      linkElement.setAttribute('href', 'http://rocketseat.com.br');
+      linkElement.setAttribute('title', 'Site da Rocketseat');
+      linkElement.setAttribute('target', 'blank');
+      
+      var textElement = document.createTextNode('Acessar site da Rocketseat');
+      linkElement.appendChild(textElement);
+
+      var containerElement = document.querySelector('#app');
+      containerElement.appendChild(linkElement);
+
+      var inputElement9 = document.querySelector('#nome1');
+      containerElement.removeChild(inputElement9);*/
+
+      // Alterado estilos
+
+      var boxElement = document.querySelector('.box');
+      boxElement.style.width = 100;
+      boxElement.style.height = 100;
+      boxElement.style.backgroundColor = '#f00';
+
+
+
 
 
 
