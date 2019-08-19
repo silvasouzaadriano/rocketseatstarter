@@ -28,4 +28,4 @@
     Note that the attribute -w was added to babel recreate automatically the bundle.js, once main.js changed
 
 ### Create a HTML(i.e: index.html) and add a tag SCRIPT with SRC for bundle.js
-    i.e: script src="./bundle.js"></script>
+    i.e: <script src="./bundle.js"></script>
