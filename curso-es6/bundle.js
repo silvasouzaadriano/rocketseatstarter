@@ -1,6 +1,7 @@
 "use strict";
 
 //Templates literals é uma forma de incluir variáveis dentro de strings
+//funcionando como interpolação
 var nome = 'Adriano';
 var idade = 43; //forma convencional
 

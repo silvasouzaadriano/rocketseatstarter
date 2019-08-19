@@ -1,4 +1,5 @@
 //Templates literals é uma forma de incluir variáveis dentro de strings
+//funcionando como interpolação
 
 const nome = 'Adriano';
 const idade = 43;
