@@ -39,8 +39,8 @@ console.log(resultado);*/
 
 minhaPromise()
   .then(function(response) {// Vai ser executado quando o resolve for chamado
-    console.log(response)
+    console.log(response);
   }) 
   .catch(function(error) { // Vai ser executado quando o reject for chamado
-    console.warn(error)
+    console.warn(error);
   }); 
