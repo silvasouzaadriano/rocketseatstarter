@@ -1,58 +1,21 @@
 "use strict";
 
-var arr = [1, 3, 4, 5, 8, 9]; // Arrow function substituem as funçõe anônimas, bastando excluir a palavra function
-// e depois do parêntese acrescentar =>
-// Quando a função recebe apenas um parâmetro, os parênteses em volta dele podem ser
-// removidos
-// Quando a função trabalha somente com uma única linha, podê-se colocar essa linha
-// logo após => sem a palavra return e sem o uso das chaves
-// As Arrow Functions são muito utilizadas no Javascript, quando se tem callback, ou seja, passagem
-// de função para dentro de outra função diminuindo a verbosidade
-// O que antes era:
+// Afim de evitar erros operacionais com a execuçào de funções, pode-se definir
+// valores padrão para cada argumento de uma função
+function soma1() {
+  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
+  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
+  return a + b;
+}
 
-/*
-var newArr = arr.map(function(item) {
-  return item + index;
-})
-*/
-//ficou
+console.log(soma1(1));
+console.log(soma1());
 
-var newArr = arr.map(function (item) {
-  return item * 2;
-});
-console.log(arr, newArr); // Embora não seja recomendado, em se tratando de funções anônimas, 
-// as Arrow Funcion são muito utilizadas nas atribuições de variáveis
-// Exemplo:
-// Retorno com corpo and return
-
-var teste = function teste() {
-  return 'testando';
+var soma2 = function soma2() {
+  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
+  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
+  return a + b;
 };
 
-console.log(teste()); // Retornando um array sem o return
-
-var teste2 = function teste2() {
-  return [1, 2, 3];
-};
-
-console.log(teste2()); // Retornando um texto diretamente sem o return
-
-var teste3 = function teste3() {
-  return 'Adriano';
-};
-
-console.log(teste3()); // Retornando um número diretamente sem o return
-
-var teste4 = function teste4() {
-  return 10;
-};
-
-console.log(teste4()); // Retornando um objeto sem o return. Nesse caso precia de um parênteses por volta do objeto
-
-var teste5 = function teste5() {
-  return {
-    nome: 'Adriano'
-  };
-};
-
-console.log(teste5());
+console.log(soma2(1));
+console.log(soma2());
