@@ -1,10 +1,22 @@
 "use strict";
 
-//Templates literals é uma forma de incluir variáveis dentro de strings
-//funcionando como interpolação
+//Object short syntax
+//Utilizado para repassar variáveis em objetos
+//Quando o nome das variáveis forem iguais ao nomes dos
+//atributos do objeto é necessário apenas passar o nome da variável
 var nome = 'Adriano';
-var idade = 43; //forma convencional
+var idade = 43; //Forma convencional
 
-console.log('Meu nome é ' + nome + ' e tenho ' + idade + ' anos.'); //forma com templates literals
+var usuario1 = {
+  nome: nome,
+  idade: idade,
+  empresa: 'Freelancer'
+};
+console.log(usuario1); //Forma com object short syntax
 
-console.log("Meu nome \xE9 ".concat(nome, " e tenho ").concat(idade, " anos."));
+var usuario2 = {
+  nome: nome,
+  idade: idade,
+  empresa: 'Freelancer'
+};
+console.log(usuario2);

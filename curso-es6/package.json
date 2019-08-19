@@ -10,6 +10,13 @@
     "@babel/preset-env": "^7.5.5"
   },
   "scripts": {
-    "dev": "babel ./main.js -o ./bundle.js -w"
+    "dev": "babel ./main.js -o ./bundle.js -w",
+    "dev1": "babel ./desafios_es6/desafioes6_01.js -o ./desafios_es6/bundles/bundledesafio01.js -w",
+    "dev2": "babel ./desafios_es6/desafioes6_02.js -o ./desafios_es6/bundles/bundledesafio02.js -w",
+    "dev3": "babel ./desafios_es6/desafioes6_03.js -o ./desafios_es6/bundles/bundledesafio03.js -w",
+    "dev4": "babel ./desafios_es6/desafioes6_04.js -o ./desafios_es6/bundles/bundledesafio04.js -w",
+    "dev5": "babel ./desafios_es6/desafioes6_05.js -o ./desafios_es6/bundles/bundledesafio05.js -w",
+    "dev6": "babel ./desafios_es6/desafioes6_06.js -o ./desafios_es6/bundles/bundledesafio06.js -w",
+    "dev7": "babel ./desafios_es6/desafioes6_07.js -o ./desafios_es6/bundles/bundledesafio07.js -w"
   }
 }
