@@ -25,9 +25,12 @@
     "scripts": {
       "dev": "babel ./main.js -o ./bundle.js -w"
     }
-    Note that the attribute -w was added to babel recreate automatically the bundle.js, once main.js changed. After change the package,json file, in a
-    separetely terminal, the command yarn dev bellow must be ran in order to start the 
-    process
+    
+    Note that the attribute -w was added to babel recreate automatically the bundle.js, once main.js changed. After change the package.json file, in a
+    separetely terminal, the command yarn dev must be ran in order to start the process.
+    
+    Also, always when a new dependency is installed and it is configured on
+    package.json file, the terminal must be stopped (Control + C) and restarted running the yarn dev command again.
 
 ### Create a HTML(i.e: index.html) and add a tag SCRIPT with SRC for bundle.js
     i.e: <script src="./bundle.js"></script>
