@@ -4,10 +4,13 @@
 
 ### Install the dependencies by line commands:
 
-- yarn add @babel/cli
-- yarn add @babel/preset-env
-- yarn add @babel/core
-- yarn add @babel/plugin-proposal-object-rest-spread
+- yarn add @babel/cli -D
+- yarn add @babel/preset-env -D
+- yarn add @babel/core -D
+- yarn add @babel/plugin-proposal-object-rest-spread -D
+- yarn add babel-loader -D
+- yarn add babel-loader@8.0.0-beta.0 -D
+- yarn add webpack webpack-cli -D
 
 ### Create a file called .gitignore and add the node_modules folder name on it
 
