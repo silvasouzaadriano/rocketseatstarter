@@ -1,21 +1,38 @@
 "use strict";
 
-// Afim de evitar erros operacionais com a execuçào de funções, pode-se definir
-// valores padrão para cada argumento de uma função
-function soma1() {
-  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
-  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
-  return a + b;
+var usuario = {
+  nome: 'Adriano',
+  idade: 43,
+  endereco: {
+    cidade: 'Florianópolis',
+    estado: 'SC'
+  }
+};
+console.log(usuario); // Forma sem desestruturação
+
+/*const nome = usuario.nome;
+const idade = usuario.idade;
+const cidade = usuario.endereco.cidade;*/
+// Forma com desentruturação
+
+var nome = usuario.nome,
+    idade = usuario.idade,
+    cidade = usuario.endereco.cidade;
+console.log(nome);
+console.log(idade);
+console.log(cidade); // Funções sem destruturação
+
+function mostraNome(usuario) {
+  console.log(usuario.nome);
 }
 
-console.log(soma1(1));
-console.log(soma1());
+mostraNome(usuario); // Funções com destruturação
 
-var soma2 = function soma2() {
-  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
-  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
-  return a + b;
-};
+function mostraNome2(_ref) {
+  var nome = _ref.nome,
+      idade = _ref.idade,
+      cidade = _ref.endereco.cidade;
+  console.log(nome, idade, cidade);
+}
 
-console.log(soma2(1));
-console.log(soma2());
+mostraNome2(usuario);
