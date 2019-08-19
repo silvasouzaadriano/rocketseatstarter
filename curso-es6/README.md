@@ -9,7 +9,6 @@
 - yarn add @babel/core -D
 - yarn add @babel/plugin-proposal-object-rest-spread -D
 - yarn add babel-loader -D
-- yarn add babel-loader@8.0.0-beta.0 -D
 - yarn add webpack webpack-cli -D
 
 ### Create a file called .gitignore and add the node_modules folder name on it
