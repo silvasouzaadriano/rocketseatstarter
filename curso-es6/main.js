@@ -1,24 +1,26 @@
-// var = Constantes não podem ter seu valor reatribuido, mas podem ser mutados
-//const a = 1; 
-//a = 3; // Isso daria erro pois o valor está sendo reatribuido
+var arr = [1, 3, 4, 5, 8, 9];
 
-//Mutação
-const usuario = { nome: 'Adriano'};
-usuario.nome = 'Diego';
-console.log(usuario);
+//Map serve para percorrer o vetor e retorna seu conteúdo
+var newArr = arr.map(function(item, index) {
+  return item + index;
+})
+console.log(arr, newArr);
 
+//Reduce serve para consomir todo o vetor transformando-o em uma única informação a cada interação
+const sum = arr.reduce(function(total, next) {
+  return total + next;
+})
+console.log(sum);
 
-// let = Variáveis let só podem ser usadas dentro do escopo, exemplo dentro de funções.
-function teste(x) {
-  let y = 2;
+//Filter serve para filtrar os elementos dentro de um array
+const filter = arr.filter(function(item) {
+  return item % 2 === 0; // Filtrando somente números pares
+})
+console.log(filter);
 
-  if (x > 5) {
-    let y = 4
-    console.log(x, y);
-  }
-
-}
-
-teste(10);
-
+//Find serve para verificar uma informação dentro do array ou se queremos encontra-la no array
+const find = arr.find(function(item) {
+  return item === 4;
+})
+console.log(find);
 

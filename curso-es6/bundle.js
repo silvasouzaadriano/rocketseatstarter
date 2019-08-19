@@ -1,22 +1,23 @@
 "use strict";
 
-// var = Constantes não podem ter seu valor reatribuido, mas podem ser mutados
-//const a = 1; 
-//a = 3; // Isso daria erro pois o valor está sendo reatribuido
-//Mutação
-var usuario = {
-  nome: 'Adriano'
-};
-usuario.nome = 'Diego';
-console.log(usuario); // let = Variáveis let só podem ser usadas dentro do escopo, exemplo dentro de funções.
+var arr = [1, 3, 4, 5, 8, 9]; //Map serve para percorrer o vetor e retorna seu conteúdo
 
-function teste(x) {
-  var y = 2;
+var newArr = arr.map(function (item, index) {
+  return item + index;
+});
+console.log(arr, newArr); //Reduce serve para consomir todo o vetor transformando-o em uma única informação a cada interação
 
-  if (x > 5) {
-    var _y = 4;
-    console.log(x, _y);
-  }
-}
+var sum = arr.reduce(function (total, next) {
+  return total + next;
+});
+console.log(sum); //Filter serve para filtrar os elementos dentro de um array
 
-teste(10);
+var filter = arr.filter(function (item) {
+  return item % 2 === 0; // Filtrando somente números pares
+});
+console.log(filter); //Find serve para verificar uma informação dentro do array ou se queremos encontra-la no array
+
+var find = arr.find(function (item) {
+  return item === 4;
+});
+console.log(find);
