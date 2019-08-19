@@ -1,43 +1,12 @@
-class List {
+class Matematica {
   constructor() {
-    this.data = [];
-  }
-
-  add(data) {
-    this.data.push(data);
-    console.log(this.data);
-  }
-
-}
-
-class TodoList extends List {
-  /*constructor() {
     this.todos = [];
   }
 
-  addTodo() {
-    this.todos.push('Novo todo');
-    console.log(this.todos);
-  }*/
-
-  constructor() {
-    super();
-
-    this.usuario = 'Adriano';
+  static soma(a, b) { //static são métodos que não alteram o conteúdo mas realizam ações com eles
+                      // retornando resultados
+    return a + b;
   }
-
-  mostraUsuario() {
-    console.log(this.usuario);
-  }
-
-
 }
 
-var MinhaLista = new TodoList();
-
-document.getElementById('novotodo').onclick = function () {
-  //MinhaLista.addTodo();
-  MinhaLista.add('Novo todo');
-}
-
-MinhaLista.mostraUsuario();
+console.log(Matematica.soma(1,2));
