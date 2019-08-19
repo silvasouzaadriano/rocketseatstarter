@@ -1,23 +1,58 @@
 "use strict";
 
-var arr = [1, 3, 4, 5, 8, 9]; //Map serve para percorrer o vetor e retorna seu conteúdo
+var arr = [1, 3, 4, 5, 8, 9]; // Arrow function substituem as funçõe anônimas, bastando excluir a palavra function
+// e depois do parêntese acrescentar =>
+// Quando a função recebe apenas um parâmetro, os parênteses em volta dele podem ser
+// removidos
+// Quando a função trabalha somente com uma única linha, podê-se colocar essa linha
+// logo após => sem a palavra return e sem o uso das chaves
+// As Arrow Functions são muito utilizadas no Javascript, quando se tem callback, ou seja, passagem
+// de função para dentro de outra função diminuindo a verbosidade
+// O que antes era:
 
-var newArr = arr.map(function (item, index) {
+/*
+var newArr = arr.map(function(item) {
   return item + index;
-});
-console.log(arr, newArr); //Reduce serve para consomir todo o vetor transformando-o em uma única informação a cada interação
+})
+*/
+//ficou
 
-var sum = arr.reduce(function (total, next) {
-  return total + next;
+var newArr = arr.map(function (item) {
+  return item * 2;
 });
-console.log(sum); //Filter serve para filtrar os elementos dentro de um array
+console.log(arr, newArr); // Embora não seja recomendado, em se tratando de funções anônimas, 
+// as Arrow Funcion são muito utilizadas nas atribuições de variáveis
+// Exemplo:
+// Retorno com corpo and return
 
-var filter = arr.filter(function (item) {
-  return item % 2 === 0; // Filtrando somente números pares
-});
-console.log(filter); //Find serve para verificar uma informação dentro do array ou se queremos encontra-la no array
+var teste = function teste() {
+  return 'testando';
+};
 
-var find = arr.find(function (item) {
-  return item === 4;
-});
-console.log(find);
+console.log(teste()); // Retornando um array sem o return
+
+var teste2 = function teste2() {
+  return [1, 2, 3];
+};
+
+console.log(teste2()); // Retornando um texto diretamente sem o return
+
+var teste3 = function teste3() {
+  return 'Adriano';
+};
+
+console.log(teste3()); // Retornando um número diretamente sem o return
+
+var teste4 = function teste4() {
+  return 10;
+};
+
+console.log(teste4()); // Retornando um objeto sem o return. Nesse caso precia de um parênteses por volta do objeto
+
+var teste5 = function teste5() {
+  return {
+    nome: 'Adriano'
+  };
+};
+
+console.log(teste5());
