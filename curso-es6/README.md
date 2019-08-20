@@ -9,7 +9,9 @@
 - yarn add @babel/core -D
 - yarn add @babel/plugin-proposal-object-rest-spread -D
 - yarn add babel-loader -D
-- yarn add webpack webpack-cli -D
+- The next dependencies should be installed pnly if the developer would like to work with webpack functionality
+  - yarn add webpack webpack-cli -D
+  - yarn add webpack-dev-server -D (offline working using a local server: i.e: http://localhost:8080/)
 
 ### Create a file called .gitignore and add the node_modules folder name on it
 
@@ -24,15 +26,28 @@
 
 ### On package.json file, setup a script called dev with the following sintaxe:
 
+    //Using babel that create the bundle.js
     "scripts": {
       "dev": "babel ./main.js -o ./bundle.js -w"
     }
 
+    //Using webpack as server and also for production deploy (on this case the bundle.js file is created)
+
+    "scripts": {
+      "dev": "webpack-dev-server --mode=development",
+      "build": "webpack --mode=development"
+    }
+
     Note that the attribute -w was added to babel recreate automatically the bundle.js, once main.js changed. After change the package.json file, in a
-    separetely terminal, the command yarn dev must be ran in order to start the process.
+    separetely terminal, the command yarn dev must be ran in order to start the process. For webpack the reload is automatically.
 
     Also, always when a new dependency is installed and it is configured on package.json file, the terminal must be stopped (Control + C) and restarted running the yarn dev command again.
 
 ### Create a HTML(i.e: index.html) and add a tag SCRIPT with SRC for bundle.js
 
     i.e: <script src="./bundle.js"></script>
+
+### For when using webpack functionality
+
+    Create a folder called src and move the main.js to this folder
+    Create a folder called publich and move the index.html to this folder
