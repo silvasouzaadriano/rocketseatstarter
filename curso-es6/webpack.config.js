@@ -1,7 +1,7 @@
 module.exports = {
-  entry: './desafios_es6_webpack/main.js',
+  entry: ['@babel/polyfill', './src/main.js'],
   output: {
-    path: __dirname + '/desafios_es6_webpack',
+    path: __dirname + '/public',
     filename: 'bundle.js'
   },
   devServer: {

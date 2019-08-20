@@ -12,6 +12,9 @@
 - The next dependencies should be installed pnly if the developer would like to work with webpack functionality
   - yarn add webpack webpack-cli -D
   - yarn add webpack-dev-server -D (offline working using a local server: i.e: http://localhost:8080/)
+- The next dependencies are necessary for async/await functionality (added on ES8)
+  - yarn add @babel/plugin-transform-async-to-generator -D
+  - yarn add @babel/polyfill -D
 
 ### Create a file called .gitignore and add the node_modules folder name on it
 
@@ -21,7 +24,10 @@
 
     {
       "presets": ["@babel/preset-env"], // Working with browser
-      "plugins": ["@babel/plugin-proposal-object-rest-spread"]
+      "plugins": [
+        "@babel/plugin-proposal-object-rest-spread",
+        "@babel/plugin-transform-async-to-generator"
+      ]
     }
 
 ### On package.json file, setup a script called dev with the following sintaxe:
@@ -32,6 +38,7 @@
     }
 
     //Using webpack as server and also for production deploy (on this case the bundle.js file is created)
+    //Note that this option only should be added if the webpack is configured
 
     "scripts": {
       "dev": "webpack-dev-server --mode=development",
@@ -51,3 +58,26 @@
 
     Create a folder called src and move the main.js to this folder
     Create a folder called publich and move the index.html to this folder
+    On root folder create a file called webpack.config.js with the following setup:
+    
+        module.exports = {
+          entry: ['@babel/polyfill', './src/main.js'],
+          output: {
+            path: __dirname + '/public',
+            filename: 'bundle.js'
+          },
+          devServer: {
+            contentBase: __dirname + '/public'
+          },
+          module: {
+            rules: [
+              {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                  loader: 'babel-loader',
+                }
+              }
+            ]
+          }
+        }
