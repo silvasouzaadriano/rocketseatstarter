@@ -1,11 +1,11 @@
 module.exports = {
-  entry: ['@babel/polyfill', './src/main.js'],
+  entry: ['@babel/polyfill', './desafios_es6_async_await_axios/main.js'],
   output: {
-    path: __dirname + '/public',
+    path: __dirname + '/desafios_es6_async_await_axios',
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: __dirname + '/public'
+    contentBase: __dirname + '/desafios_es6_async_await_axios'
   },
   module: {
     rules: [
