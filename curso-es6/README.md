@@ -15,6 +15,7 @@
 - The next dependencies are necessary for async/await functionality (added on ES8)
   - yarn add @babel/plugin-transform-async-to-generator -D
   - yarn add @babel/polyfill -D
+- yarn add axios -D
 
 ### Create a file called .gitignore and add the node_modules folder name on it
 
