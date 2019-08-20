@@ -1,7 +1,7 @@
 module.exports = {
-  entry: './src/main.js',
+  entry: './desafios_es6_webpack/main.js',
   output: {
-    path: __dirname + '/public',
+    path: __dirname + '/desafios_es6_webpack',
     filename: 'bundle.js'
   },
   devServer: {
